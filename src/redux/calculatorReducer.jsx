@@ -43,17 +43,24 @@ const calculatorReducer = (state = initialState, action) => {
           ...state,
         }
       }
-      else if (lastInput === action.payload) {
-        return{
+      if (lastInput === action.payload) {
+        return {
           ...state,
         }
       }
-      return {
-        ...state,
-        answer: null,
-        expression: [...state.expression, action.payload],
-        decimal: false,
-      };
+      if (lastInput === "-" && (action.payload === "*" || action.payload === "/")) {
+        return {
+          ...state,
+        }
+      } else {
+        return {
+          ...state,
+          answer: null,
+          expression: [...state.expression, action.payload],
+          decimal: false,
+        };
+
+      }
     case CLICK_EQUAL:
       if (state.expression.length === 0) return { ...state };
       return {
