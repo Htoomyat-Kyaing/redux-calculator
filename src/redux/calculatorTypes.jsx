@@ -1,0 +1,9 @@
+export const CLICK_OPERANDS = "CLICK_OPERANDS";
+
+export const CLICK_CLEAR = "CLICK_CLEAR"
+
+export const CLICK_DECIMAL = "CLICK_DECIMAL"
+
+export const CLICK_OPERATORS = 'CLICK_OPERATORS'
+
+export const CLICK_EQUAL = 'CLICK_EQUAL'
