@@ -37,6 +37,17 @@ const calculatorReducer = (state = initialState, action) => {
         decimal: true,
       };
     case CLICK_OPERATORS:
+      const lastInput = state.expression[state.expression.length - 1]
+      if (isOperator(lastInput) && lastInput !== "-" && action.payload !== "-") {
+        return {
+          ...state,
+        }
+      }
+      else if (lastInput === action.payload) {
+        return{
+          ...state,
+        }
+      }
       return {
         ...state,
         answer: null,
